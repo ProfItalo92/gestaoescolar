@@ -8,26 +8,38 @@
 <body>
   <div class="login-container">
     <h1>Gestão Escolar</h1>
-    <form id="login-form">
+    <div id="pergunta-inicial">
+      <p>Você já é cadastrado?</p>
+      <button onclick="mostrarLogin()">Sim, fazer login</button>
+      <button onclick="window.location.href='cadastro-login.html'">Não, quero me cadastrar</button>
+    </div>
+
+    <form id="login-form" style="display:none;">
       <input type="text" id="usuario" placeholder="Usuário do Colégio" required>
       <input type="password" id="senha" placeholder="Senha" required>
       <button type="submit">Entrar</button>
     </form>
   </div>
-  <script>
-  document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const usuario = document.getElementById('usuario').value;
-    const senha = document.getElementById('senha').value;
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
-    if (usuarios[usuario] && usuarios[usuario] === senha) {
-      localStorage.setItem('usuarioAtivo', usuario);
-      window.location.href = 'cadastro.html';
-    } else {
-      alert("Usuário ou senha inválidos.");
+  <script>
+    function mostrarLogin() {
+      document.getElementById('pergunta-inicial').style.display = 'none';
+      document.getElementById('login-form').style.display = 'flex';
     }
-  });
-</script>
+
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+
+      const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+      if (usuarios[usuario] && usuarios[usuario] === senha) {
+        localStorage.setItem('usuarioAtivo', usuario);
+        window.location.href = 'cadastro.html';
+      } else {
+        alert("Usuário ou senha inválidos.");
+      }
+    });
+  </script>
 </body>
 </html>
