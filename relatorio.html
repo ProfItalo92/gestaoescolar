@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatórios Escolares</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Relatórios de Lançamentos</h1>
+
+  <section>
+    <h2>Selecionar Turma</h2>
+    <select id="turmaRelatorio"></select>
+    <label for="dataInicio">De:</label>
+    <input type="date" id="dataInicio">
+    <label for="dataFim">Até:</label>
+    <input type="date" id="dataFim">
+    <button onclick="gerarRelatorio()">Gerar Relatório</button>
+    <button onclick="exportarCSV()">Exportar CSV</button>
+    <button onclick="window.print()">Exportar PDF</button>
+  </section>
+
+  <section>
+    <h2>Chamada e Conteúdo</h2>
+    <div id="relatorioChamada"></div>
+  </section>
+
+  <section>
+    <h2>Notas</h2>
+    <div id="relatorioNotas"></div>
+  </section>
+
+  <button onclick="window.location.href='index.html'">Voltar ao Início</button>
+  <script src="js/relatorio.js"></script>
+</body>
+</html>

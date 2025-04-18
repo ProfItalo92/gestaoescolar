@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatórios | Gestão Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Relatórios Dinâmicos</h2>
+  <label for="filtro-data">Filtrar por data:</label>
+  <input type="month" id="filtro-data">
+  <button onclick="exportarCSV()">Exportar CSV</button>
+  <button onclick="window.print()">Exportar PDF</button>
+
+  <table id="tabela-relatorio">
+    <thead>
+      <tr>
+        <th>Data</th><th>Aluno</th><th>Chamada</th><th>Nota</th><th>Conteúdo</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

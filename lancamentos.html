@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lançamentos | Gestão Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Lançamento de Chamada, Conteúdo e Notas</h2>
+  <form id="lancamento-form">
+    <input type="date" id="data">
+    <input type="text" id="conteudo" placeholder="Conteúdo da Aula" required>
+    <input type="text" id="alunoNota" placeholder="Aluno" required>
+    <input type="number" step="0.1" max="10" min="0" id="nota" placeholder="Nota (0-10)" required>
+    <select id="chamada">
+      <option value="C">Presente</option>
+      <option value="F">Falta</option>
+    </select>
+    <button type="submit">Lançar</button>
+  </form>
+
+  <button onclick="window.location.href='relatorios.html'">Ver Relatórios</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
