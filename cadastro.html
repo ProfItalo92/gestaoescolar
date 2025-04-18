@@ -1,36 +1,21 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login | Gestão Escolar</title>
+  <title>Cadastro | Gestão Escolar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-container">
-    <h1>Gestão Escolar</h1>
-    <form id="login-form">
-      <input type="text" id="usuario" placeholder="Usuário do Colégio" required>
-      <input type="password" id="senha" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
-    </form>
-  </div>
-  <script>
-  document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const usuario = document.getElementById('usuario').value;
-    const senha = document.getElementById('senha').value;
+  <h2>Cadastro de Colégio, Turma e Aluno</h2>
+  <form id="cadastro-form">
+    <input type="text" id="colegio" placeholder="Nome do Colégio" required>
+    <input type="text" id="turma" placeholder="Turma" required>
+    <input type="text" id="aluno" placeholder="Nome do Aluno" required>
+    <button type="submit">Cadastrar</button>
+  </form>
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
-    if (usuarios[usuario] && usuarios[usuario] === senha) {
-      localStorage.setItem('usuarioAtivo', usuario);
-      window.location.href = 'cadastro.html';
-    } else {
-      alert("Usuário ou senha inválidos.");
-    }
-  });
-</script>
+  <button onclick="window.location.href='lancamentos.html'">Ir para Lançamentos</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
